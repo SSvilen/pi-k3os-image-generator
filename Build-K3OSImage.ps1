@@ -80,7 +80,8 @@ try {
         Write-Verbose -Message "The select drive letter '$SDCardDriveLetter' corresponds to disk $diskID."
 
         if ($PSCmdlet.ShouldProcess("$diskID", "Install K3OS on the driver(that will erase all data)!")) {
-            & $RaspberryPiImagerPath --cli "picl-k3os-$K3OSVersion-raspberrypi.img" "$diskID"
+            Write-Verbose -Message "Installing '$ImageOutputPath\picl-k3os-$K3OSVersion-raspberrypi.img' corresponds to disk $diskID."
+            & $RaspberryPiImagerPath --cli "$ImageOutputPath\picl-k3os-$K3OSVersion-raspberrypi.img" "$diskID"
         }
     }
 } catch {
