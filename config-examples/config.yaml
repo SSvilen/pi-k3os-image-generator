@@ -1,0 +1,16 @@
+# n1
+ssh_authorized_keys:
+  - ssh-rsa %KEY%
+hostname: k3s-agent4
+k3os:
+  ntp_servers:
+    - 0.de.pool.ntp.org
+    - 1.de.pool.ntp.org
+  dns_nameservers:
+    - 192.168.4.9
+    - 192.168.4.7
+  password: %PW%
+  server_url: https://k3s-server.svilen.my:6443
+  token: %TOKEN%
+  k3s_args:
+    - agent
