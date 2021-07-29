@@ -1,4 +1,4 @@
-# PiCl k3os image generator on Windows
+# PiCl k3os image generator for Windows
 
 This repository is based on the [@sgielen](https://github.com/sgielen)`s great project ([link](https://github.com/sgielen/picl-k3os-image-generator)). So all credits go the creators and the contributors of that project.<br>
 This project can be used to generate images for k3os compatible with various armv8 (aarch64) devices using Windows, PowerShell, WSL, Docker :
