@@ -1,6 +1,6 @@
 # PiCl k3os image generator on Windows
 
-This repository is based on the [@sgielen](https://github.com/sgielen)`s great project [link](https://github.com/sgielen/picl-k3os-image-generator). So all credits go the creators and the contributors of that project.<br>
+This repository is based on the [@sgielen](https://github.com/sgielen)`s great project ([link](https://github.com/sgielen/picl-k3os-image-generator)). So all credits go the creators and the contributors of that project.<br>
 This project can be used to generate images for k3os compatible with various armv8 (aarch64) devices using Windows, PowerShell, WSL, Docker :
 
 - Raspberry Pi model 3B+
@@ -53,27 +53,6 @@ If resizing works but after reboot you cannot get start k3os, use the same trick
 the normal init script and try to start k3os manually. You may need to load additional kernel modules.
 
 Anytime you think the scripts or documentation could be improved, please file an issue or a PR and we'll be happy to help.
-
-## Docker
-
-You can build this project in Docker, e.g. when you'd rather not install dependencies on your host machine or when you're
-building on a Mac or Windows.
-
-If you want to build in Docker, you can build a container containing the dependencies using:
-
-```
-docker build . -t picl-builder:latest
-```
-
-Then, run the container using:
-
-```
-docker run -e TARGET=all -v ${PWD}:/app -v /dev:/dev --privileged picl-builder:latest
-```
-
-The images will be written into your local directory once the container is done.
-
-## Authors & License
 
 The initial code was written by Dennis Brentjes and Sjors Gielen, with many
 [contributors since then](https://github.com/sgielen/picl-k3os-image-generator/graphs/contributors),
