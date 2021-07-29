@@ -1,14 +1,15 @@
 # PiCl k3os image generator for Windows
 
 This repository is based on the [@sgielen](https://github.com/sgielen)`s great project ([link](https://github.com/sgielen/picl-k3os-image-generator)). So all credits go the creators and the contributors of that project.<br>
-This project can be used to generate images for k3os compatible with various armv8 (aarch64) devices using Windows, PowerShell, WSL, Docker :
+This project can be used to generate images for k3os compatible with various armv8 (aarch64) devices using Windows, PowerShell, WSL, Docker (you must have WSL2 with Docker Desktop set to use it as an engine) :
 
 - Raspberry Pi model 3B+
 - Raspberry Pi model 4
 
 ## Getting Started
 
-- In the config/ directory, create a configuration file which you would like to apply to your Raspberry Pi.
+- Install Raspberry PI Imager.
+- Create a configuration file which you would like to apply to your Raspberry Pi.
 - For Raspberry Pi devices, you can choose which firmware to use for the build by setting parameter `$RaspberryFirmwareVersion`
   - If unset, the script uses a known good version (set as default value for `$RaspberryFirmwareVersion` Parameter)
   - Set to `latest`, which instructs the script to always pull the latest version available in the raspberry pi firmware repo

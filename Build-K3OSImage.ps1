@@ -1,4 +1,19 @@
 #Requires -RunAsAdministrator
+<#
+.SYNOPSIS
+    Builds a K3OS Image based for Raspberry Pi.
+.DESCRIPTION
+    The script uses WSL, Docker and Raspberry PI Imager.
+    The image is built from Raspberry Pi firmware and K3OS Root file system.
+.PARAMETER K3SConfigurationFile
+    Specifies the K3S configuration file, which contains all required K3OS configurations.
+.EXAMPLE
+    PS C:\> .\Build-K3OSImage.ps1 -K3SConfigurationFile C:\work\lab\raspberry-k3OS-config\config.yaml -SDCardDriveLetter e -ImageOutputPath C:\work\ -Verbose -DockerImageName k3os-builder
+    Create an image using an alredy present Docker Image and install it on the SD card, which is mounted in Windows as E: drive.
+.EXAMPLE
+    PS C:\> .\Build-K3OSImage.ps1 -K3SConfigurationFile C:\work\lab\raspberry-k3OS-config\config.yaml -SDCardDriveLetter e -ImageOutputPath C:\work\ -Verbose -DockerImageName k3os-builder -K3OSVersion 'v0.20.7-k3s1r0'
+    Create an image using an alredy present Docker Image, specific K3OS versionand install it on the SD card, which is mounted in Windows as E: drive.
+#>
 [CmdletBinding(ConfirmImpact = 'High', SupportsShouldProcess)]
 param (
     [Parameter(Mandatory = $true)]
@@ -7,7 +22,7 @@ param (
 
     [Parameter()]
     [string]
-    $K3OSVersion = 'v0.11.0',
+    $K3OSVersion = 'v0.20.7-k3s1r0',
 
     [Parameter()]
     [string]
