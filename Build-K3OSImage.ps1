@@ -7,6 +7,23 @@
     The image is built from Raspberry Pi firmware and K3OS Root file system.
 .PARAMETER K3SConfigurationFile
     Specifies the K3S configuration file, which contains all required K3OS configurations.
+.PARAMETER K3OSVersion
+    Specifies the K3OS version to be installed.
+.PARAMETER RaspberryFirmwareVersion
+    Specifies the Raspeberry Pi Firmware version to be used.
+.PARAMETER RaspberryPiImagerPath
+    Specifies the location of the RaspberryPiImagerPath EXE file.
+    Defaults to 'C:\Program Files (x86)\Raspberry Pi Imager\rpi-imager.exe'
+.PARAMETER SDCardDriveLetter
+    Specifies the drive letter, where the SD is mounted.
+.PARAMETER ImageOutputPath
+    Specifies the path, where the IMG file should be saved.
+.PARAMETER DockerImageName
+    Specifies the image name, which should be used to generate the K3Os image.
+    If not specified, a docker image will be automatically build.
+.PARAMETER SetDefenderExclusion
+    By default Windows defender would not allow Raspberry Pi Imager to install the K3OS on the SD card drive.
+    The images EXE should be added as exclustion in the defender configuration.
 .EXAMPLE
     PS C:\> .\Build-K3OSImage.ps1 -K3SConfigurationFile C:\work\lab\raspberry-k3OS-config\config.yaml -SDCardDriveLetter e -ImageOutputPath C:\work\ -Verbose -DockerImageName k3os-builder
     Create an image using an alredy present Docker Image and install it on the SD card, which is mounted in Windows as E: drive.
