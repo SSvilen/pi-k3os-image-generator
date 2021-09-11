@@ -222,6 +222,7 @@ if [ "$IMAGE_TYPE" = "raspberrypi" ]; then
 
 	cat <<EOF | sudo tee boot/config.txt >/dev/null
 dtoverlay=vc4-fkms-v3d
+dtoverlay=rpi-poe-plus
 gpu_mem=128
 arm_64bit=1
 

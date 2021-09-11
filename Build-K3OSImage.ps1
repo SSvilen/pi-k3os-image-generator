@@ -97,7 +97,7 @@ try {
 
     Write-Verbose -Message "Running to container.The .img file will be created under $ImageOutputPath."
 
-    & docker run -e K3OS_VERSION=$K3OSVersion -v "$((Get-Item $K3SConfigurationFile).Fullname)`:/opt/source/config.yaml" -v "$ImageOutputPath`:/opt/source/output" -v /dev:/dev --privileged $DockerImageName
+    & docker run -e K3OS_VERSION=$K3OSVersion -e RASPBERRY_PI_FIRMWARE=$RaspberryFirmwareVersion -v "$((Get-Item $K3SConfigurationFile).Fullname)`:/opt/source/config.yaml" -v "$ImageOutputPath`:/opt/source/output" -v /dev:/dev --privileged $DockerImageName
 
     if (-not $?) {
         return
