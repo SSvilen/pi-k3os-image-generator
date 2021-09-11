@@ -43,7 +43,7 @@ param (
 
     [Parameter()]
     [string]
-    $RaspberryFirmwareVersion = '1.20200811',
+    $RaspberryFirmwareVersion = '1.20210831',
 
     [Parameter()]
     [string]
