@@ -39,11 +39,11 @@ param (
 
     [Parameter()]
     [string]
-    $K3OSVersion = 'v0.20.7-k3s1r0',
+    $K3OSVersion = 'v0.21.5-k3s2r1',
 
     [Parameter()]
     [string]
-    $RaspberryFirmwareVersion = '1.20210831',
+    $RaspberryFirmwareVersion = '1.20220120',
 
     [Parameter()]
     [string]
